@@ -22,117 +22,33 @@ public class ReferServiceImpl implements ReferService{
 	}
 
 	@Override
-	public Refer selectOne(Refer record) {
+	public int add(Refer t) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.referDao.insert(t);
 	}
 
 	@Override
-	public List<Refer> select(Refer record) {
+	public int del(Object id) {
 		// TODO Auto-generated method stub
-		return null;
+		return referDao.deleteByPrimaryKey(id);
 	}
 
 	@Override
-	public int selectCount(Refer record) {
+	public List<Refer> getAll() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.referDao.getAll();
 	}
 
 	@Override
-	public Refer selectByPrimaryKey(Object key) {
+	public int update(Refer t) {
 		// TODO Auto-generated method stub
-		return null;
+		return referDao.updateByPrimaryKey(t);
 	}
 
 	@Override
-	public boolean existsWithPrimaryKey(Object key) {
+	public Refer getById(String id) {
 		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int insert(Refer record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int insertSelective(Refer record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateByPrimaryKey(Refer record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateByPrimaryKeySelective(Refer record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete(Refer record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deleteByPrimaryKey(Object key) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Refer> selectByExample(Object example) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Refer selectOneByExample(Object example) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int selectCountByExample(Object example) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deleteByExample(Object example) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateByExample(Refer record, Object example) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateByExampleSelective(Refer record, Object example) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Refer> selectByExampleAndRowBounds(Object example, RowBounds rowBounds) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Refer> selectByRowBounds(Refer record, RowBounds rowBounds) {
-		// TODO Auto-generated method stub
-		return null;
+		return referDao.selectByPrimaryKey(id);
 	}
 
 }

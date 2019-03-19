@@ -19,7 +19,7 @@ public class ReferController {
 	
 	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
-		List<Refer> refers = referService.selectAll();
+		List<Refer> refers = referService.getAll();
 		model.addAttribute("refers", refers);
 		return "refer";
 	}

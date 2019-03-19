@@ -3,6 +3,7 @@ package com.ecjtu.po;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name="crm_refer")
 public class Refer {
@@ -13,8 +14,13 @@ public class Refer {
     private String source;
 
     private Integer userid;
-     
-    private String username;
+    
+//    po(对应数据表),vo(对应查询),dto(多个服务间查询的对象)
+    
+    @Transient
+    private String referName;
+
+	private String username;
 
     private String gender;
 
@@ -73,7 +79,13 @@ public class Refer {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
+    public String getReferName() {
+		return referName;
+	}
 
+	public void setReferName(String referName) {
+		this.referName = referName;
+	}
     public String getUsername() {
         return username;
     }

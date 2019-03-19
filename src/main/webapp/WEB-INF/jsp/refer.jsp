@@ -364,7 +364,7 @@
 							<tr>
 									<td>${refer.id}</td>
 									<td>${refer.source}</td>
-									<td>${refer.userid }</td>
+									<td>${refer.referName }</td>
 									<td>${refer.username }</td>
 									<td>${refer.state }</td>
 								    <td>${refer.resourcelevel }</td>
