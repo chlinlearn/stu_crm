@@ -2,6 +2,7 @@ package com.ecjtu.service;
 
 import java.util.List;
 
+import com.ecjtu.po.Department;
 import com.ecjtu.po.Refer;
 
 //通用接口
@@ -17,4 +18,5 @@ public interface IBaseService<T> {
 	
 	public T getById(String id);
 
+	
 }

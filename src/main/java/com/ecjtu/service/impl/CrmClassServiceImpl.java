@@ -1,27 +1,25 @@
 package com.ecjtu.service.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ecjtu.dao.DepartmentDao;
-import com.ecjtu.po.Department;
-import java.util.List;
-import com.ecjtu.service.DepartmentService;
-
+import com.ecjtu.dao.CrmClassDao;
+import com.ecjtu.po.CrmClass;
+import com.ecjtu.service.CrmClassService;
 
 @Service
 @Transactional
-public class DepartmentServiceImpl implements DepartmentService{
-
+public class CrmClassServiceImpl implements CrmClassService{
 	@Autowired
-	private DepartmentDao departmentDao;
-	//选择全部数据
+	private CrmClassDao crmClassDao;
 
 	@Override
-	public int add(Department t) {
+	public int add(CrmClass t) {
 		// TODO Auto-generated method stub
-		return this.departmentDao.insert(t);
+		return this.crmClassDao.insert(t);
 	}
 
 	@Override
@@ -31,27 +29,27 @@ public class DepartmentServiceImpl implements DepartmentService{
 	}
 
 	@Override
-	public List<Department> getAll() {
+	public List<CrmClass> getAll() {
 		// TODO Auto-generated method stub
-		return this.departmentDao.selectAll();
+		return this.crmClassDao.selectAll();
 	}
 
 	@Override
-	public int update(Department t) {
+	public int update(CrmClass t) {
 		// TODO Auto-generated method stub
-		return this.departmentDao.updateByPrimaryKeySelective(t);
+		return 0;
 	}
 
 	@Override
-	public Department getById(String id) {
+	public CrmClass getById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Department> selectBydepname(Department department) {
+	public List<CrmClass> search(CrmClass crmClass) {
 		// TODO Auto-generated method stub
-		return this.departmentDao.select(department);
+		return this.crmClassDao.select(crmClass);
 	}
 
 }

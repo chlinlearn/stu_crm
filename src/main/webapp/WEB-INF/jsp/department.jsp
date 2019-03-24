@@ -182,6 +182,7 @@
 				</li>
 			</ul> 
 		</li>
+		
 		<!-- 用户信息和系统设置结束 -->
 	</ul> <!-- 左侧显示列表部分 start-->
 	<div class="navbar-default sidebar" role="navigation">
@@ -432,6 +433,7 @@
 <script src="http://localhost:8092/stu_crm/js/dataTables.bootstrap.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="http://localhost:8092/stu_crm/js/sb-admin-2.js"></script>
+
 <!-- 编写js代码 -->
 <script type="text/javascript">
 $(function(){

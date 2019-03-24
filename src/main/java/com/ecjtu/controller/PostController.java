@@ -15,10 +15,16 @@ import com.ecjtu.service.PostService;
 public class PostController {
 	@Autowired
 	private PostService postService;
+
 	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
-		List<Post> posts = postService.selectAll();
+		List<Post> posts = postService.getAll();
 		model.addAttribute("posts", posts);
-		return "/post";
+		return "post";
+	}
+	
+	@RequestMapping("/search.action")
+	public String search() {
+		return "post";
 	}
 }

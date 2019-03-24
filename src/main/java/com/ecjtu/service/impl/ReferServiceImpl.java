@@ -16,10 +16,6 @@ import com.ecjtu.service.ReferService;
 public class ReferServiceImpl implements ReferService{
 	@Autowired
 	private ReferDao referDao;
-	
-	public List<Refer> selectAll(){
-		return this.referDao.selectAll();
-	}
 
 	@Override
 	public int add(Refer t) {

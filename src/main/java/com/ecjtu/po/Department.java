@@ -1,12 +1,14 @@
 package com.ecjtu.po;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "crm_department")
-public class Department {
+public class Department{
 	@Id
 	@GeneratedValue(generator = "JDBC")
 	private String id;

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Table(name="crm_class")
-public class Class {
+public class CrmClass {
 	@Id
 	@GeneratedValue(generator="JDBC")
     private Integer id;

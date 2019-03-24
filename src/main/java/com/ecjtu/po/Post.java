@@ -3,6 +3,7 @@ package com.ecjtu.po;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name="crm_post")
 public class Post {
@@ -13,7 +14,9 @@ public class Post {
     private String postname;
 
     private Integer depid;
-
+    
+    @Transient
+    private String depName;
     
     @Override
 	public String toString() {
@@ -43,4 +46,13 @@ public class Post {
     public void setDepid(Integer depid) {
         this.depid = depid;
     }
+
+	public String getDepName() {
+		return depName;
+	}
+
+	public void setDepName(String depName) {
+		this.depName = depName;
+	}
+    
 }
