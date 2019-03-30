@@ -167,7 +167,8 @@ $(function(){
 	function createdepartment() {
 	$.post("create.action",
 	$("#new_department_form").serialize(),function(data){
-	        if(data =="OK"){
+		    alert(data.depName)
+	        if(data){
 	            alert("部门创建成功！");
 	            window.location.reload();
 	        }else{

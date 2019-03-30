@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ecjtu.po.Department;
 import com.ecjtu.service.DepartmentService;
@@ -39,12 +40,14 @@ public class DepartmentController {
 	}
 
 	@RequestMapping(value = "/create.action", method = RequestMethod.POST)
-	public void create(@RequestParam("depname") String depname) {
+	@ResponseBody
+	public JsonResult<Department> create(@RequestParam("depname") String depname) {
 		System.out.println(depname);
 		Department department = new Department();
 		department.setDepName(depname);
 		departmentService.add(department);
-		//返回JSON状态码
+		//返回状态码,信息,数据
+		return JsonResult.success("OK", department);
 	}
 	
 	@RequestMapping(value="/update.action",method = RequestMethod.POST)

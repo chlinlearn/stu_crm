@@ -187,7 +187,7 @@
 					<li><a href="department/list.action#"><i
 							class="fa fa-gear fa-fw"></i> 系统设置</a></li>
 					<li class="divider"></li>
-					<li><a href="logout.action"> <i
+					<li><a href="http://localhost:8092/stu_crm/logout.action"> <i
 							class="fa fa-sign-out fa-fw"></i>退出登录
 					</a></li>
 				</ul></li>

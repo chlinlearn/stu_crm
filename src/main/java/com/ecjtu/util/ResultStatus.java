@@ -9,14 +9,18 @@ public enum ResultStatus {
     REQUEST_ERROR(400),
     OK(200);
 
-    final int code;
+    private int code;
 
-    ResultStatus(int code) {
-        this.code = code;
-    }
+	public int getCode() {
+		return code;
+	}
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	private ResultStatus(int code) {
+		// TODO Auto-generated constructor stub
+		this.code = code;
+	}
 }

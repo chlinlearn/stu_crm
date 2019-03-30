@@ -2,129 +2,131 @@ package com.ecjtu.po;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name="crm_staff")
+@Table(name = "crm_staff")
 public class Staff {
 	@Id
-	@GeneratedValue(generator="JDBC")
-    private Integer id;
+	@GeneratedValue(generator = "JDBC")
+	private Integer id;
 
-    private String staffcode;
-
-    private String loginname;
-
-    private String loginpwd;
-
-    private String staffname;
-
-    private String gender;
-
-    private String email;
-
-    private Date birthday;
-
-    private Date ondutydate;
-
-    private Integer postid;
-
-    private Short state;
-
-    
-    @Override
-	public String toString() {
-		return "Staff [id=" + id + ", staffcode=" + staffcode + ", loginname=" + loginname + ", loginpwd=" + loginpwd
-				+ ", staffname=" + staffname + ", gender=" + gender + ", email=" + email + ", birthday=" + birthday
-				+ ", ondutydate=" + ondutydate + ", postid=" + postid + ", state=" + state + "]";
-	}
+	@Column(name = "staffCode")
+	private String staffCode;
+	@Column(name = "loginName")
+	private String loginName;
+	@Column(name = "loginPwd")
+	private String loginPwd;
+	@Column(name = "staffName")
+	private String staffName;
+	@Column(name = "gender")
+	private String gender;
+	@Column(name = "email")
+	private String email;
+	@Column(name = "birthday")
+	private Date birthday;
+	@Column(name = "onDutyDate")
+	private Date onDutyDate;
+	@Column(name = "postID")
+	private Integer postID;
+	@Column(name = "state")
+	private Short state;
 
 	public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getStaffcode() {
-        return staffcode;
-    }
+	public String getStaffCode() {
+		return staffCode;
+	}
 
-    public void setStaffcode(String staffcode) {
-        this.staffcode = staffcode == null ? null : staffcode.trim();
-    }
+	public void setStaffCode(String staffCode) {
+		this.staffCode = staffCode;
+	}
 
-    public String getLoginname() {
-        return loginname;
-    }
+	public String getLoginName() {
+		return loginName;
+	}
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
-    }
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
 
-    public String getLoginpwd() {
-        return loginpwd;
-    }
+	public String getLoginPwd() {
+		return loginPwd;
+	}
 
-    public void setLoginpwd(String loginpwd) {
-        this.loginpwd = loginpwd == null ? null : loginpwd.trim();
-    }
+	public void setLoginPwd(String loginPwd) {
+		this.loginPwd = loginPwd;
+	}
 
-    public String getStaffname() {
-        return staffname;
-    }
+	public String getStaffName() {
+		return staffName;
+	}
 
-    public void setStaffname(String staffname) {
-        this.staffname = staffname == null ? null : staffname.trim();
-    }
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
 
-    public String getGender() {
-        return gender;
-    }
+	public String getGender() {
+		return gender;
+	}
 
-    public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
-    }
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Date getBirthday() {
-        return birthday;
-    }
+	public Date getBirthday() {
+		return birthday;
+	}
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
 
-    public Date getOndutydate() {
-        return ondutydate;
-    }
+	public Date getOnDutyDate() {
+		return onDutyDate;
+	}
 
-    public void setOndutydate(Date ondutydate) {
-        this.ondutydate = ondutydate;
-    }
+	public void setOnDutyDate(Date onDutyDate) {
+		this.onDutyDate = onDutyDate;
+	}
 
-    public Integer getPostid() {
-        return postid;
-    }
+	public Integer getPostID() {
+		return postID;
+	}
 
-    public void setPostid(Integer postid) {
-        this.postid = postid;
-    }
+	public void setPostID(Integer postID) {
+		this.postID = postID;
+	}
 
-    public Short getState() {
-        return state;
-    }
+	public Short getState() {
+		return state;
+	}
 
-    public void setState(Short state) {
-        this.state = state;
-    }
+	public void setState(Short state) {
+		this.state = state;
+	}
+
+	@Override
+	public String toString() {
+		return "Staff [id=" + id + ", staffCode=" + staffCode + ", loginName=" + loginName + ", loginPwd=" + loginPwd
+				+ ", staffName=" + staffName + ", gender=" + gender + ", email=" + email + ", birthday=" + birthday
+				+ ", onDutyDate=" + onDutyDate + ", postID=" + postID + ", state=" + state + "]";
+	}
+
 }
