@@ -22,6 +22,7 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService departmentService;
 
+	/* 查找所有信息 */
 	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Department> departments = departmentService.getAll();
@@ -29,6 +30,7 @@ public class DepartmentController {
 		return "department";
 	}
 
+	/* 搜索部门 */
 	@RequestMapping("/search.action")
 	public String search(@RequestParam("depname") String depname, Model model) {
 		Department department = new Department();
@@ -39,6 +41,7 @@ public class DepartmentController {
 		return "department";
 	}
 
+	/* 添加部门 */
 	@RequestMapping(value = "/create.action", method = RequestMethod.POST)
 	@ResponseBody
 	public JsonResult<Department> create(@RequestParam("depname") String depname) {
@@ -50,6 +53,7 @@ public class DepartmentController {
 		return JsonResult.success("OK", department);
 	}
 	
+	/* 更新部门信息 */
 	@RequestMapping(value="/update.action",method = RequestMethod.POST)
 	public void update(@RequestParam("depname") String depname) {
 		Department department = new Department();
@@ -60,6 +64,7 @@ public class DepartmentController {
 		departmentService.update(department);
 	}
 	
+	/* 根据部门id删除 */
 	public void delete() {
 		
 	}

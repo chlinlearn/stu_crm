@@ -184,7 +184,7 @@ $(function(){
 	        url:"",/* getDepartmentById.action */
 	        data:{"id":id},
 	        success:function(data) {
-	            $("#edit_depid").val(data.depid);
+	            $("#edit_depid").val(data.id);
 	            $("#edit_departmentName").val(data.depname); 
 	            
 	        }
