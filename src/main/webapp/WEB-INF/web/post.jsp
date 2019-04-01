@@ -60,7 +60,7 @@
 							<c:forEach items="${posts}" var="posts">
 							<tr>
 									<td>${posts.id}</td>
-									<td>${posts.postname}</td> 
+									<td>${posts.postName}</td> 
 									<td>${posts.depName}</td> 
 									<td>
 										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(${posts.id})">修改</a>
@@ -199,9 +199,9 @@ $(function(){
 	        url:"crmpost/getPostById.action",
 	        data:{"id":id},
 	        success:function(data) {
-	        	$("#edit_postid").val(data.postid);
-	            $("#edit_depid").val(data.depid);
-	            $("#edit_crmpostName").val(data.name); 
+	        	$("#edit_postid").val(data.id);
+	            $("#edit_depid").val(data.depID);
+	            $("#edit_crmpostName").val(data.postName); 
 	        }
 	    });
 	}

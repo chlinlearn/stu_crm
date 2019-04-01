@@ -14,7 +14,7 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">咨询学生管理</h1>
+				<h1 class="page-header">课程信息管理</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -26,7 +26,6 @@
 						<label for="lessonName">课程名</label> <input type="text"
 							class="form-control" id="lessonName" value="" name="lessonName">
 					</div>
-			</div>
 			<button type="submit" class="btn btn-primary">查询</button>
 			</form>
 		</div>
@@ -36,7 +35,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">咨询信息列表</div>
+				<div class="panel-heading">课程信息列表</div>
 				<!-- /.panel-heading -->
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -229,10 +228,10 @@ $(function(){
 	        data:{"id":id},
 	        success:function(data) {
 	            $("#edit_id").val(data.id);
-	            $("#edit_clessonName").val(data.clessonName);
-	            $("#edit_clessonCost").val(data.clessonCost);
-	            $("#edit_ctotalTime").val(data.ctotalTime);
-	            $("#edit_cremark").val(data.cremark);	            
+	            $("#edit_clessonName").val(data.lessonName);
+	            $("#edit_clessonCost").val(data.lessonCost);
+	            $("#edit_ctotalTime").val(data.totalTime);
+	            $("#edit_cremark").val(data.remark);	            
 	        }
 	    });
 	}

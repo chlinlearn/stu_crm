@@ -10,6 +10,7 @@ import tk.mybatis.mapper.common.Mapper;
 
 public interface DepartmentService extends IBaseService<Department>{
 
+	/* 实现搜索功能 */
 	List<Department> selectBydepname(Department department);
 
 }

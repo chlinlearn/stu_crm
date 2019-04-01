@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Department{
 	@Id
 	@GeneratedValue(generator = "JDBC")
-	private String id;
+	private Integer id;
 
 	@Column(name = "depName")
 	private String depName;
@@ -19,11 +19,12 @@ public class Department{
 	@Column(name = "isCancel")
 	private int isCancel;
 
-	public String getId() {
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -47,5 +48,6 @@ public class Department{
 	public String toString() {
 		return "Department [id=" + id + ", depName=" + depName + ", isCancel=" + isCancel + "]";
 	}
+
 
 }

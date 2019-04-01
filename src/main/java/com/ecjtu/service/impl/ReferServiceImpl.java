@@ -24,7 +24,7 @@ public class ReferServiceImpl implements ReferService{
 	}
 
 	@Override
-	public int del(Object id) {
+	public int del(int id) {
 		// TODO Auto-generated method stub
 		return referDao.deleteByPrimaryKey(id);
 	}
@@ -42,7 +42,7 @@ public class ReferServiceImpl implements ReferService{
 	}
 
 	@Override
-	public Refer getById(String id) {
+	public Refer getById(int id) {
 		// TODO Auto-generated method stub
 		return referDao.selectByPrimaryKey(id);
 	}

@@ -223,9 +223,9 @@ $(function(){
 	        data:{"id":id},
 	        success:function(data) {
 	        	$("#edit_id").val(data.id);
-	            $("#edit_creferName").val(data.creferName);
-	            $("#edit_cusername").val(data.cusername);
-	            $("#edit_cconsultTime").val(data.cconsultTime);
+	            $("#edit_creferName").val(data.referName);
+	            $("#edit_cusername").val(data.username);
+	            $("#edit_cconsultTime").val(data.consultTime);
 	        }
 	    });
 	}

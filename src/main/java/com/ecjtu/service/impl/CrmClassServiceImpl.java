@@ -23,7 +23,7 @@ public class CrmClassServiceImpl implements CrmClassService{
 	}
 
 	@Override
-	public int del(Object id) {
+	public int del(int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -41,7 +41,7 @@ public class CrmClassServiceImpl implements CrmClassService{
 	}
 
 	@Override
-	public CrmClass getById(String id) {
+	public CrmClass getById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

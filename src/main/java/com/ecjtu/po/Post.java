@@ -11,41 +11,36 @@ public class Post {
 	@GeneratedValue(generator="JDBC")
     private Integer id;
 
-    private String postname;
+    private String postName;
 
-    private Integer depid;
+    private Integer depID;
     
     @Transient
     private String depName;
-    
-    @Override
-	public String toString() {
-		return "Post [id=" + id + ", postname=" + postname + ", depid=" + depid + "]";
-	}
 
 	public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getPostname() {
-        return postname;
-    }
+	public String getPostName() {
+		return postName;
+	}
 
-    public void setPostname(String postname) {
-        this.postname = postname == null ? null : postname.trim();
-    }
+	public void setPostName(String postName) {
+		this.postName = postName;
+	}
 
-    public Integer getDepid() {
-        return depid;
-    }
+	public Integer getDepID() {
+		return depID;
+	}
 
-    public void setDepid(Integer depid) {
-        this.depid = depid;
-    }
+	public void setDepID(Integer depID) {
+		this.depID = depID;
+	}
 
 	public String getDepName() {
 		return depName;
@@ -54,5 +49,11 @@ public class Post {
 	public void setDepName(String depName) {
 		this.depName = depName;
 	}
-    
+
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", postName=" + postName + ", depID=" + depID + ", depName=" + depName + "]";
+	}
+
+   
 }

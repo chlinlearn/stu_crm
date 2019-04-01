@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">咨询信息列表</div>
+					<div class="panel-heading">就业信息列表</div>
 					<!-- /.panel-heading -->
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -64,7 +64,7 @@
 									<td>${crmjobs.stuCode}</td>
 									<td>${crmjobs.stuName }</td>
 									<td>${crmjobs.gender }</td>
-									<td>${crmjobs.class }</td>
+									<td>${crmjobs.classname }</td>
 									<td>${crmjobs.jobcompany }</td>
 									<td>${crmjobs.location }</td>
 									<td>${crmjobs.activeCode }</td>
@@ -291,7 +291,7 @@ $(function(){
     });
 }); 
 //清空新建咨询窗口中的数据
-	function clearrefer() {
+	function clearcrmjob() {
 	    $("#new_cstuCode").val("");
 	    $("#new_cstuName").val("");
 	    $("#new_cgender").val("");
@@ -304,7 +304,7 @@ $(function(){
 	    $("#new_remark").val("");
 	}
 	// 创建咨询
-	function createrefer() {
+	function createcrmjob() {
 	$.post("create.action",
 	$("#new_crmjob_form").serialize(),function(data){
 	        if(data =="OK"){
@@ -317,22 +317,22 @@ $(function(){
 	    });
 	}
 	// 通过id获取修改的咨询信息
-	function editcemjob(id) {
+	function editcrmjob(id) {
 	    $.ajax({
 	        type:"get",
-	        url:"refer/getcrmjobById.action",
+	        url:"getCrmJobById.action",
 	        data:{"id":id},
 	        success:function(data) {
 	            $("#edit_id").val(data.id);
-	            $("#edit_cstuCode").val(data.cstuCode);
-	            $("#edit_cstuName").val(data.cstuName);
-	            $("#edit_cgender").val(data.cgender);
-	            $("#edit_cclass").val(data.cclass);
-	            $("#edit_cjobcompany").val(data.cjobcompany);
-	            $("#edit_clocation").val(data.clocation);
-	            $("#edit_cactiveCode").val(data.cactiveCode);
-	            $("#edit_cjobState").val(data.cjobState);
-	            $("#edit_cjobTime").val(data.cjobTime);
+	            $("#edit_cstuCode").val(data.stuCode);
+	            $("#edit_cstuName").val(data.stuName);
+	            $("#edit_cgender").val(data.gender);
+	            $("#edit_cclass").val(data.classname);
+	            $("#edit_cjobcompany").val(data.jobcompany);
+	            $("#edit_clocation").val(data.location);
+	            $("#edit_cactiveCode").val(data.activeCode);
+	            $("#edit_cjobState").val(data.jobState);
+	            $("#edit_cjobTime").val(data.jobTime);
 	            $("#edit_remark").val(data.remark);
 	        }
 	    });

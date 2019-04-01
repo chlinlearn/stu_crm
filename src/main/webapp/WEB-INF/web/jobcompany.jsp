@@ -14,7 +14,7 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">学生公司信息管理</h1>
+				<h1 class="page-header">学生就业公司信息管理</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -29,19 +29,18 @@
 					<div class="form-group">
 						<label for="comCode">机构代码</label> <input type="text"
 							class="form-control" id="comCode" value="" name="comCode">
-					</div>
-			</div>
+					</div>			
 			<button type="submit" class="btn btn-primary">查询</button>
 			</form>
 		</div>
 	</div>
-	<a href="refer/list.action#" class="btn btn-primary"
+	<a href="create.action#" class="btn btn-primary"
 		data-toggle="modal" data-target="#newjoncompanyDialog"
 		onclick="clearjobcompany()">新建</a>
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">咨询信息列表</div>
+				<div class="panel-heading">学生就业公司信息列表</div>
 				<!-- /.panel-heading -->
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -323,15 +322,15 @@ $(function(){
 	        data:{"id":id},
 	        success:function(data) {
 	            $("#edit_id").val(data.id);
-	            $("#edit_ccompanyName").val(data.ccompanyName);
-	            $("#edit_ccomCode").val(data.ccomCode);
-	            $("#edit_caddress").val(data.caddress);
-	            $("#edit_clinkman").val(data.clinkman);
-	            $("#edit_ctelephone").val(data.ctelephone);
-	            $("#edit_cquarters").val(data.cquarters);
-	            $("#edit_cemolument").val(data.cemolument);
-	            $("#edit_cstate").val(data.cstate);
-	            $("#edit_cremark").val(data.cremark);
+	            $("#edit_ccompanyName").val(data.companyName);
+	            $("#edit_ccomCode").val(data.comCode);
+	            $("#edit_caddress").val(data.address);
+	            $("#edit_clinkman").val(data.linkman);
+	            $("#edit_ctelephone").val(data.telephone);
+	            $("#edit_cquarters").val(data.quarters);
+	            $("#edit_cemolument").val(data.emolument);
+	            $("#edit_cstate").val(data.state);
+	            $("#edit_cremark").val(data.remark);
 	        }
 	    });
 	}

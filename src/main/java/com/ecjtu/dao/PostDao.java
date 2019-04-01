@@ -16,4 +16,8 @@ public interface PostDao extends Mapper<Post>{
 			"  from crm_post p,crm_department d" + 
 			"  where p.depID = d.id")
 	public List<Post> getAll();
+	
+	@Select("select id,postName,depID from "
+			+ "crm_post where depID = ${depID}")
+	List<Post> selectPostBydepId(int depID);
 }

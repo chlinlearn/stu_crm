@@ -26,7 +26,7 @@
 						action="search.action">
 						<div class="form-group">
 							<label for="departmentName">部门名称</label> <input type="text"
-								class="form-control" id="depname" value="" name="depname">
+								class="form-control" id="depName" value="" name="depName">
 						</div>
 						<button type="submit" class="btn btn-primary">查询</button>
 					</form>
@@ -53,11 +53,11 @@
 									<tr>
 										<td>${dep.id}</td>
 										<td>${dep.depName}</td>
-										<td><a href="#"
+										<td><a href=""
 											class="btn btn-primary btn-xs" data-toggle="modal"
 											data-target="#departmentEditDialog"
 											onclick="editdepartment(${dep.id})">修改</a> <a
-											href="department/list.action#" class="btn btn-danger btn-xs"
+											href="" class="btn btn-danger btn-xs"
 											onclick="deletedepartment(${dep.id})">删除</a></td>
 									</tr>
 								</c:forEach>
@@ -105,7 +105,7 @@
 								部门名称 </label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="new_departmentName"
-									placeholder="部门名称" name="depname">
+									placeholder="部门名称" name="depName">
 							</div>
 						</div>
 					</form>
@@ -132,12 +132,12 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="edit_department_form">
-						<input type="hidden" id="edit_depid" name="depid">
+						<input type="hidden" id="edit_depid" name="id">
 						<div class="form-group">
 							<label for="edit_departmentName" class="col-sm-2 control-label">部门名称</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="edit_departmentName"
-									placeholder="部门名称" name="depname">
+									placeholder="部门名称" name="depName">
 							</div>
 						</div>
 					</form>
@@ -151,7 +151,7 @@
 		</div>
 	</div>
 	<!-- 编写js代码 -->
-	<script type="text/javascript">
+<script type="text/javascript">
 $(function(){
     $(".panel-heading").click(function(e){
         /*切换折叠指示图标*/
@@ -167,8 +167,7 @@ $(function(){
 	function createdepartment() {
 	$.post("create.action",
 	$("#new_department_form").serialize(),function(data){
-		    alert(data.depName)
-	        if(data){
+	        if(data == "OK"){
 	            alert("部门创建成功！");
 	            window.location.reload();
 	        }else{
@@ -181,19 +180,20 @@ $(function(){
 	function editdepartment(id) {
 	    $.ajax({
 	        type:"get",
-	        url:"",/* getDepartmentById.action */
+	        url:"getDepartmentById.action",/* getDepartmentById.action */
 	        data:{"id":id},
 	        success:function(data) {
 	            $("#edit_depid").val(data.id);
-	            $("#edit_departmentName").val(data.depname); 
+	            $("#edit_departmentName").val(data.depName); 
 	            
 	        }
 	    });
 	}
     // 执行修改部门操作
 	function updatedepartment() {
-		$.post("update.action",$("#edit_department_form").serialize(),function(data){
-			if(data =="OK"){
+		$.post("update.action",
+		$("#edit_department_form").serialize(),function(data){
+			if(data == "OK"){
 				alert("部门信息更新成功！");
 				window.location.reload();
 			}else{
@@ -205,9 +205,9 @@ $(function(){
 	// 删除部门
 	function deletedepartment(id) {
 	    if(confirm('确实要删除该部门吗?')) {
-	$.post("department/delete.action",{"id":id},
+	$.post("delete.action",{"id":id},
 	function(data){
-	            if(data =="OK"){
+	            if(data == "OK"){
 	                alert("部门删除成功！");
 	                window.location.reload();
 	            }else{

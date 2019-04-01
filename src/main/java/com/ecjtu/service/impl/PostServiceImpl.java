@@ -11,6 +11,9 @@ import com.ecjtu.dao.PostDao;
 import com.ecjtu.po.Post;
 import com.ecjtu.service.PostService;
 
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
+
 @Service
 @Transactional
 public class PostServiceImpl implements PostService{
@@ -24,7 +27,7 @@ public class PostServiceImpl implements PostService{
 	}
 
 	@Override
-	public int del(Object id) {
+	public int del(int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -42,9 +45,9 @@ public class PostServiceImpl implements PostService{
 	}
 
 	@Override
-	public Post getById(String id) {
+	public Post getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.postDao.selectByPrimaryKey(id);
 	}
 
 	@Override
@@ -52,5 +55,15 @@ public class PostServiceImpl implements PostService{
 		// TODO Auto-generated method stub
 		return this.postDao.select(post);
 	}
+
+	@Override
+	public List<Post> getByDepId(int id) {
+		// TODO Auto-generated method stub
+		Example example = new Example(Post.class);
+		Criteria criteria = example.createCriteria();
+		criteria.andEqualTo("depID",id);
+		return this.postDao.selectByExample(example);
+	}
+
 	
 }

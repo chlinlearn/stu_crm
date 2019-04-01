@@ -10,13 +10,13 @@ public interface IBaseService<T> {
 
 	public int add(T t);
 	
-	public int del(Object id);
+	public int del(int id);
 	
 	public List<T> getAll();
 	
 	public int update(T t);
 	
-	public T getById(String id);
+	public T getById(int id);
 
 	
 }
