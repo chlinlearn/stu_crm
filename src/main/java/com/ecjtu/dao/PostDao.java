@@ -2,6 +2,7 @@ package com.ecjtu.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -19,5 +20,5 @@ public interface PostDao extends Mapper<Post>{
 	
 	@Select("select id,postName,depID from "
 			+ "crm_post where depID = ${depID}")
-	List<Post> selectPostBydepId(int depID);
+	List<Post> selectPostBydepId(@Param(value="depID") int depID);
 }

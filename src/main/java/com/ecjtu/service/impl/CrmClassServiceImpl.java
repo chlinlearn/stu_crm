@@ -23,7 +23,7 @@ public class CrmClassServiceImpl implements CrmClassService{
 	}
 
 	@Override
-	public int del(int id) {
+	public int del(Object id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

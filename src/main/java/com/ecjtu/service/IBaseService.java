@@ -10,7 +10,7 @@ public interface IBaseService<T> {
 
 	public int add(T t);
 	
-	public int del(int id);
+	public int del(Object id);
 	
 	public List<T> getAll();
 	

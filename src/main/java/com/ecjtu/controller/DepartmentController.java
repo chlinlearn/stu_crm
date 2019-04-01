@@ -85,9 +85,9 @@ public class DepartmentController {
 	 */
 	@RequestMapping("/delete.action")
 	@ResponseBody
-	public String delete(Department dep) {
-		System.out.println("id = " + dep.getId());	
-		int num = departmentService.del(dep.getId());
+	public String delete(@RequestParam("id") int id) {
+		System.out.println("id = " + id);	
+		int num = departmentService.del(id);
 		return num==1?"OK":"ERROR";
 	}
 	

@@ -27,7 +27,7 @@ public class PostServiceImpl implements PostService{
 	}
 
 	@Override
-	public int del(int id) {
+	public int del(Object id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
