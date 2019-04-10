@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://itcx.com/pagination/" prefix="pg"%>
 <%@include file="base.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -66,34 +67,27 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${refers}" var="refer">
+							<c:forEach items="${page.rows}" var="refer">
 								<tr>
 									<td>${refer.id}</td>
 									<td>${refer.source}</td>
-									<td>${refer.referName }</td>
-									<td>${refer.username }</td>
-									<td>${refer.state }</td>
-									<td>${refer.resourcelevel }</td>
-									<td><a href="refer/list.action#"
-										class="btn btn-primary btn-xs" data-toggle="modal"
-										data-target="#referEditDialog"
-										onclick="editrefer(${refer.id})">修改</a> <a
-										href="refer/list.action#" class="btn btn-danger btn-xs"
+									<td>${refer.staffName}</td>
+									<td>${refer.username}</td>
+									<td>${refer.state}</td>
+									<td>${refer.resourcelevel}</td>
+									<td><a href="" class="btn btn-primary btn-xs"
+										data-toggle="modal" data-target="#referEditDialog"
+										onclick="editrefer(${refer.id})">修改</a> <a href=""
+										class="btn btn-danger btn-xs"
 										onclick="deleterefer(${refer.id})">删除</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 					<div class="col-md-12 text-right">
-						<nav>
-						<ul class="pagination">
-							<li class="disabled"><a href="refer/list.action#">首页 </a></li>
-							<li class="disabled"><a href="refer/list.action#">上一页 </a></li>
-							<li class="active"><a href="refer/list.action#">1<spanclass="sr-only"></spanclass="sr-only"></a></li>
-							<li class="disabled"><a href="refer/list.action#">下一页</a></li>
-							<li class="disabled"><a href="refer/list.action#">尾页</a></li>
-						</ul>
-						</nav>
+						<!-- 分页条使用自定义标签实现-->
+						<pg:page
+							url="${pageContext.request.contextPath }/refer/list.action" />
 					</div>
 					<!-- /.panel-body -->
 				</div>
@@ -102,7 +96,7 @@
 			<!-- /.col-lg-12 -->
 		</div>
 	</div>
-	<!-- 咨询列表查询部分  end-->
+	<!-- 部门列表查询部分  end-->
 	</div>
 	<!-- 创建咨询模态框 -->
 	<div class="modal fade" id="newreferDialog" tabindex="-1" role="dialog"

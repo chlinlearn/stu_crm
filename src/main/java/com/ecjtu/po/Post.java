@@ -1,5 +1,6 @@
 package com.ecjtu.po;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,10 +12,15 @@ public class Post {
 	@GeneratedValue(generator="JDBC")
     private Integer id;
 
+	@Column(name="postName")
     private String postName;
-
+	
+	@Column(name="depID")
     private Integer depID;
     
+	@Column(name="isCancel")
+	private Integer isCancel;
+	
     @Transient
     private String depName;
 
@@ -49,11 +55,21 @@ public class Post {
 	public void setDepName(String depName) {
 		this.depName = depName;
 	}
+	
+
+
+	public Integer getIsCancel() {
+		return isCancel;
+	}
+
+	public void setIsCancel(Integer isCancel) {
+		this.isCancel = isCancel;
+	}
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", postName=" + postName + ", depID=" + depID + ", depName=" + depName + "]";
+		return "Post [id=" + id + ", postName=" + postName + ", depID=" + depID + ", isCancel=" + isCancel
+				+ ", depName=" + depName + "]";
 	}
 
-   
 }

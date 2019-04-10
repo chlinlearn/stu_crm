@@ -1,5 +1,6 @@
 package com.ecjtu.po;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,41 +12,57 @@ public class Refer {
 	@GeneratedValue(generator="JDBC")
     private Integer id;
 
+	@Column(name="source")
     private String source;
 
+	@Column(name="userid")
     private Integer userid;
     
 //    po(对应数据表),vo(对应查询),dto(多个服务间查询的对象)
     
     @Transient
-    private String referName;
+    private String staffName;
 
+    @Column(name="username")
 	private String username;
 
+    @Column(name="gender")
     private String gender;
 
+    @Column(name="address")
     private String address;
 
+    @Column(name="email")
     private String email;
 
+    @Column(name="idcard")
     private String idcard;
 
+    @Column(name="phone")
     private String phone;
 
+    @Column(name="weixin")
     private String weixin;
 
+    @Column(name="qq")
     private String qq;
 
+    @Column(name="shopgood")
     private String shopgood;
 
+    @Column(name="state")
     private String state;
 
+    @Column(name="isjob")
     private Short isjob;
 
+    @Column(name="byacademy")
     private String byacademy;
 
+    @Column(name="resourcelevel")
     private String resourcelevel;
 
+    @Column(name="remark")
     private String remark;
 
     @Override
@@ -79,14 +96,16 @@ public class Refer {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
-    public String getReferName() {
-		return referName;
+  
+    public String getStaffName() {
+		return staffName;
 	}
 
-	public void setReferName(String referName) {
-		this.referName = referName;
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
 	}
-    public String getUsername() {
+
+	public String getUsername() {
         return username;
     }
 

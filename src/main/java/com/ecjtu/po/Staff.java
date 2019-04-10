@@ -29,8 +29,10 @@ public class Staff {
 	private Date birthday;
 	@Column(name = "onDutyDate")
 	private Date onDutyDate;
+	
 	@Column(name = "postID")
 	private Integer postID;
+	
 	@Column(name = "state")
 	private Short state;
 

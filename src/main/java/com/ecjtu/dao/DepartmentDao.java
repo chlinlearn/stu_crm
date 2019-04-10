@@ -12,9 +12,10 @@ import tk.mybatis.mapper.common.Mapper;
 
 @Repository
 public interface DepartmentDao extends Mapper<Department>{
+	//换行字符串前加空格
 	@Select("select id,depName from crm_department "
-			+ "where depName like '%${depName}% "
-			+ "limit ${start},${rows}'")
+			+ " where isCancel = 0 and depName like '%${depName}%' "
+			+ " limit ${start},${rows} ")
 	List<Department> selectPagingList(Map<String, String> map);	
 
 }

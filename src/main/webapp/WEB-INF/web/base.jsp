@@ -210,7 +210,7 @@
 					role="tabpanel" aria-labelledby="collapseListGroupHeading1">
 					<ul class="list-group">
 						<li class="list-group-item"><a
-							href="http://localhost:8092/stu_crm/refer/findAll.action"> <i
+							href="http://localhost:8092/stu_crm/refer/list.action"> <i
 								class="fa fa-paste fa-fw"></i> 咨询学生管理
 						</a></li>
 
@@ -308,12 +308,12 @@
 					role="tabpanel" aria-labelledby="collapseListGroupHeading5">
 					<ul class="list-group">
 						<li class="list-group-item"><a
-							href="http://localhost:8092/stu_crm/department/findAll.action">
+							href="http://localhost:8092/stu_crm/department/list.action">
 								<i class="fa fa-dashboard fa-fw"></i> 部门管理
 						</a></li>
 
 						<li class="list-group-item"><a
-							href="http://localhost:8092/stu_crm/post/findAll.action"> <i
+							href="http://localhost:8092/stu_crm/post/list.action"> <i
 								class="fa fa-comment-o fa-fw"></i> 职务管理
 						</a></li>
 

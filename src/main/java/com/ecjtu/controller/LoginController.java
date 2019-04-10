@@ -30,7 +30,7 @@ public class LoginController {
 			// 将用户对象添加到 Session
 			session.setAttribute("USER_SESSION", user);
 			// 跳转到主页面
-			return "redirect:department/findAll.action";// 跳转到部门列表页面
+			return "redirect:department/list.action";// 跳转到部门列表页面
 		}
 		model.addAttribute("msg", "账号或密码错误，请重新输入！");
 		// 返回到登录页面
