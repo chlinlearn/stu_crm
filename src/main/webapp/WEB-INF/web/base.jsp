@@ -318,7 +318,7 @@
 						</a></li>
 
 						<li class="list-group-item"><a
-							href="http://localhost:8092/stu_crm/staff/findAll.action"> <i
+							href="http://localhost:8092/stu_crm/staff/list.action"> <i
 								class="fa fa-umbrella fa-fw"></i> 员工管理
 						</a></li>
 					</ul>

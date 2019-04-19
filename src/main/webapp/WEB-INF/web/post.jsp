@@ -70,7 +70,7 @@
 									<td>${posts.depName}</td>
 									<td><a href="" class="btn btn-primary btn-xs"
 										data-toggle="modal" data-target="#crmpostEditDialog"
-										onclick="editpost(${posts.id})">修改</a> <a href=""
+										onclick="editcrmpost(${posts.id})">修改</a> <a href=""
 										class="btn btn-danger btn-xs"
 										onclick="deletecrmpost(${posts.id})">删除</a></td>
 								</tr>
@@ -154,24 +154,28 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="edit_crmpost_form">
-						<input type="hidden" id="edit_postid" name="postid">
+						<input type="hidden" id="edit_postid" name="id">
 						<div class="form-group">
 							<label for="edit_depid" class="col-sm-2 control-label">
 								所属部门 </label>
 							<div class="col-sm-4">
-								<select class="form-control" id="edit_depid" name="depid">
-									<option value="1">教学部</option>
-									<option value="2">人力资源部</option>
+								<select class="form-control" id="edit_depid" name="depID">
+									<option value="1">教务部</option>
+									<option value="2">咨询部</option>
 									<option value="3">财务部</option>
 									<option value="4">学工部</option>
-									<option value="5">咨询部</option>
-									<option value="6">就业部</option>
+									<option value="5">数据部</option>
+									<option value="6">UI部</option>
+									<option value="7">创新部</option>
+									<option value="8">后端部</option>
+									<option value="9">人事部</option>
+									<option value="10">后勤部</option>
 								</select>
 							</div>
 							<label for="edit_crmpostName" class="col-sm-2 control-label">职务名称</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="edit_crmpostName"
-									placeholder="职务名称" name="name">
+									placeholder="职务名称" name="postName">
 							</div>
 						</div>
 					</form>
@@ -215,7 +219,7 @@ $(function(){
 	function editcrmpost(id) {
 	    $.ajax({
 	        type:"get",
-	        url:"crmpost/getPostById.action",
+	        url:"getPostById.action",
 	        data:{"id":id},
 	        success:function(data) {
 	        	$("#edit_postid").val(data.id);
@@ -226,8 +230,8 @@ $(function(){
 	}
     // 执行修改职务操作
 	function updatecrmpost() {
-		$.post("crmpost/update.action",$("#edit_crmpost_form").serialize(),function(data){
-			if(data =="OK"){
+		$.post("update.action",$("#edit_crmpost_form").serialize(),function(data){
+			if(data == "OK"){
 				alert("职务信息更新成功！");
 				window.location.reload();
 			}else{

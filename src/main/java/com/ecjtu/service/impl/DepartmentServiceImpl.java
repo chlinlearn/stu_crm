@@ -13,6 +13,8 @@ import com.ecjtu.po.Post;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.ecjtu.service.DepartmentService;
 import com.ecjtu.util.PageBean;
@@ -43,7 +45,11 @@ public class DepartmentServiceImpl implements DepartmentService {
 		/*
 		 * 判断是否是空字符串或者非法字符 [\u4e00-\u9fa5]待完成
 		 */
-		if (null == dep.getDepName() && dep.getDepName().equals("")) {
+		Pattern pattern = Pattern.compile("[!@#$%&~^]");
+		Matcher matcher = pattern.matcher(dep.getDepName());
+		
+		if (null == dep.getDepName() && dep.getDepName().equals("")
+			&& matcher.find() ){
 			return 0;
 		}
 		// 判断是否有sql脚本注入

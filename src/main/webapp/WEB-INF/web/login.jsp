@@ -30,7 +30,7 @@
 </script>
 </head>
 <body leftMargin=0 topMargin=0 marginwidth="0" marginheight="0"
-	background="<%=basePath %>/images/bg4.jpg">
+	background="${pageContext.request.contextPath }/images/bg4.jpg">
 	<div ALIGN="center">
 		<table border="0" width="440px" cellspacing="0" cellpadding="0"
 			id="table1">

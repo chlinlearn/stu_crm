@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ecjtu.po.Department;
 import com.ecjtu.po.Post;
 import com.ecjtu.service.PostService;
+import com.ecjtu.util.JsonResult;
 import com.ecjtu.util.PageBean;
+import com.ecjtu.util.ResultStatus;
 
 /*职务管理*/
 
@@ -56,7 +58,7 @@ public class PostController {
 	}
 
 	@RequestMapping("/update.action")
-	@ResponseBody
+	@ResponseBody  
 	public String update(Post post) {
 		int num = postService.update(post);
 		return num == 1 ? "OK" : "ERROR";
@@ -66,6 +68,16 @@ public class PostController {
 	@ResponseBody
 	public String delete(int id) {
 		int num = postService.del(id);
-		return num == 1 ? "OK" : "ERROR";
+		if(num > 0) {
+			return "OK";
+		}else {
+			return "ERROR";
+		}		
+	}
+	
+	@RequestMapping("/getPostById.action")
+	@ResponseBody
+	public Post getPostById(int id) {		
+		return postService.getById(id);
 	}
 }

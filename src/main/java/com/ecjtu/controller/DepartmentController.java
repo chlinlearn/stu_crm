@@ -80,10 +80,14 @@ public class DepartmentController {
 	 */
 	@RequestMapping("/delete.action")
 	@ResponseBody
-	public String delete(@RequestParam("id") int id) {
+	public String delete(int id) {
 		System.out.println("id = " + id);
 		int num = departmentService.del(id);
-		return num == 1 ? "OK" : "ERROR";
+		if(num > 0) {
+			return "OK";
+		}else {
+			return "ERROR";
+		}	
 	}
 
 	@RequestMapping("/list.action")

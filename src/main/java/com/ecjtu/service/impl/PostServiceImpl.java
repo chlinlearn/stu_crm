@@ -3,6 +3,8 @@ package com.ecjtu.service.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,7 @@ import tk.mybatis.mapper.entity.Example.Criteria;
 public class PostServiceImpl implements PostService {
 	@Autowired
 	private PostDao postDao;
-	
+
 	@Autowired
 	private StaffDao staffDao;
 
@@ -40,6 +42,11 @@ public class PostServiceImpl implements PostService {
 	}
 
 	private int validPostName(Post post) {
+		/* 不能为空，不能为非法字符 */
+		System.out.println(post.getPostName());
+		Pattern pattern = Pattern.compile("[!@#$%&~^]"); 
+		Matcher matcher = pattern.matcher(post.getPostName());
+
 		if (null == post.getPostName() && post.getPostName().equals("")) {
 			return 0;
 		}
@@ -90,7 +97,8 @@ public class PostServiceImpl implements PostService {
 		if (validPostName(post) != 1) {
 			return 0;
 		}
-		return postDao.updateByPrimaryKeySelective(post);
+		System.out.println(post.getId()+post.getDepID()+post.getPostName());
+		return this.postDao.updateByPrimaryKeySelective(post);
 	}
 
 	@Override

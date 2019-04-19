@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://itcx.com/pagination/" prefix="pg"%>
 <!-- base模板 -->
 <%@ include file="base.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,17 +25,21 @@
 				<form class="form-inline" method="get" action="crmstaff/list.action">
 					<div class="form-group">
 						<label for="crmstaffName">员工名称</label> <input type="text"
-							class="form-control" id="crmstaffName" value="" name="staffname">
+							class="form-control" id="crmstaffName" value="" name="staffName">
 					</div>
 					<div class="form-group">
 						<label for="crmpostid">职务</label> <select class="form-control"
-							id="crmpostid" name="postid">
-							<option value="" selected="selected">---请选择---</option>
+							id="crmpostid" name="postID">
+							<option value="1" selected="selected">班主任</option>
+							<option value="2">教师</option>
+							<option value="3">经理</option>
+							<option value="4">督导主任</option>
+							<option value="5">教师</option>					
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="crmtime">时间</label> <input type="datetime-local"
-							class="form-control" id="crmtime" placeholder="开班时间" name="time">
+							class="form-control" id="crmtime" placeholder="开班时间" name="onDutyDate">
 					</div>
 					<button type="submit" class="btn btn-primary">查询</button>
 				</form>
@@ -60,37 +65,28 @@
 								<th>操作</th>
 							</tr>
 						</thead>
-						<tbody>
-							<c:forEach items="${staffs}" var="staffs">
+							<tbody>
+							<c:forEach items="${page.rows}" var="staffs">
 								<tr>
 									<td>${staffs.id}</td>
 									<td>${staffs.staffName}</td>
 									<td>${staffs.gender}</td>
 									<td>${staffs.birthday}</td>
 									<td>${staffs.onDutyDate}</td>
-									<td>${staffs.postID}</td>
-									<td><a href="crmstaff/list.action#"
-										class="btn btn-primary btn-xs" data-toggle="modal"
-										data-target="#crmstaffEditDialog"
-										onclick="editcrmstaff(${staffs.id})">修改</a> <a
-										href="crmstaff/list.action#" class="btn btn-danger btn-xs"
+									<td>${staffs.postName}</td>
+									<td><a href="" class="btn btn-primary btn-xs"
+										data-toggle="modal" data-target="#crmstaffEditDialog"
+										onclick="editcrmstaff(${staffs.id})">修改</a> <a href=""
+										class="btn btn-danger btn-xs"
 										onclick="deletecrmstaff(${staffs.id})">删除</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 					<div class="col-md-12 text-right">
-						<nav>
-						<ul class="pagination">
-							<li class="disabled"><a href="crmstaff/list.action#">首页
-							</a></li>
-							<li class="disabled"><a href="crmstaff/list.action#">上一页
-							</a></li>
-							<li class="active"><a href="crmstaff/list.action#">1<spanclass="sr-only"></spanclass="sr-only"></a></li>
-							<li class="disabled"><a href="crmstaff/list.action#">下一页</a></li>
-							<li class="disabled"><a href="crmstaff/list.action#">尾页</a></li>
-						</ul>
-						</nav>
+						<!-- 分页条使用自定义标签实现-->
+						<pg:page
+							url="${pageContext.request.contextPath }/staff/list.action" />
 					</div>
 					<!-- /.panel-body -->
 				</div>

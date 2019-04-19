@@ -1,11 +1,13 @@
 package com.ecjtu.po;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "crm_staff")
 public class Staff {
@@ -15,18 +17,25 @@ public class Staff {
 
 	@Column(name = "staffCode")
 	private String staffCode;
+	
 	@Column(name = "loginName")
 	private String loginName;
+	
 	@Column(name = "loginPwd")
 	private String loginPwd;
+	
 	@Column(name = "staffName")
 	private String staffName;
+	
 	@Column(name = "gender")
 	private String gender;
+	
 	@Column(name = "email")
 	private String email;
+	
 	@Column(name = "birthday")
 	private Date birthday;
+	
 	@Column(name = "onDutyDate")
 	private Date onDutyDate;
 	
@@ -36,6 +45,12 @@ public class Staff {
 	@Column(name = "state")
 	private Short state;
 
+	@Column(name="isDelete")
+	private Integer isDelete;
+	
+	@Transient
+	private String postName;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -99,7 +114,7 @@ public class Staff {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-
+	
 	public Date getOnDutyDate() {
 		return onDutyDate;
 	}
@@ -124,11 +139,28 @@ public class Staff {
 		this.state = state;
 	}
 
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
+
+	public String getPostName() {
+		return postName;
+	}
+
+	public void setPostName(String postName) {
+		this.postName = postName;
+	}
+
 	@Override
 	public String toString() {
 		return "Staff [id=" + id + ", staffCode=" + staffCode + ", loginName=" + loginName + ", loginPwd=" + loginPwd
 				+ ", staffName=" + staffName + ", gender=" + gender + ", email=" + email + ", birthday=" + birthday
-				+ ", onDutyDate=" + onDutyDate + ", postID=" + postID + ", state=" + state + "]";
+				+ ", onDutyDate=" + onDutyDate + ", postID=" + postID + ", state=" + state + ", isDelete=" + isDelete
+				+ ", postName=" + postName + "]";
 	}
 
 }
